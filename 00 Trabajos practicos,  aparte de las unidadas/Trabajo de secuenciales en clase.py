@@ -7,6 +7,10 @@ mes=int(mes)
 
 dia_semana=dia_semana.lower()
 
+if dia>31 or mes>12:
+    print("Error la fecha es incorrecta")
+    exit()
+
 if dia_semana=="lunes":
     print("Se dicta nivel inicial")
 elif dia_semana=="martes":
@@ -21,9 +25,6 @@ else:
     print("Es fin de semana y no se dicta clase")
     exit()
 
-if dia>31 or mes>12:
-    print("Error la fecha es incorrecta")
-    exit()
 
 
 if dia_semana == "lunes" or dia_semana == "martes" or dia_semana == "miercoles":
