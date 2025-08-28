@@ -1,23 +1,28 @@
+"""10)Escribir un programa que pregunte al usuario en cuál hemisferio se encuentra (N/S), qué mes
+del año es y qué día es. El programa deberá utilizar esa información para imprimir por pantalla
+si el usuario se encuentra en otoño, invierno, primavera o verano."""
+
+hemisferio=input("Ingrese en cual hemisferio se encuentra (N/S)").lower()
+
+mes=input("Ingrese que mes del año es: (ej: 'marzo') ").lower()
+dia=int(input("Ingrese que dia del año es: (ej: '15')"))
 
 
-"""8) Escribir un programa que solicite al usuario que ingrese su nombre y el número 1, 2 o 3
-dependiendo de la opción que desee:
-1. Si quiere su nombre en mayúsculas. Por ejemplo: PEDRO.
-2. Si quiere su nombre en minúsculas. Por ejemplo: pedro.
-3. Si quiere su nombre con la primera letra mayúscula. Por ejemplo: Pedro.
-El programa debe transformar el nombre ingresado de acuerdo a la opción seleccionada por el
-usuario e imprimir el resultado por pantalla. Nota: investigue uso de las funciones upper(),
-lower() y title() de Python para convertir entre mayúsculas y minúsculas.
-"""
-
-nombre=input("Ingrese su nombre: ")
-opcion=input("Elije la opcion que desee:\n1. Si quiere su nombre en mayúsculas.\n2. Si quiere su nombre en minúsculas.\n3. Si quiere su nombre con la primera letra mayúscula\nOpción: ")
-
-if opcion=="1":
-    print(nombre.upper())
-elif opcion=="2":
-    print(nombre.lower())
-elif opcion=="3":
-    print(nombre.title())
-else:
-    print("Ingrese un numero incorrecto(Vuelva intentarlo con 1,2,3)")
+if hemisferio=="n":
+    if (dia>=21 and mes=="diciembre")or mes=="enero" or mes=="febrero" or ("marzo"==mes and dia<=20):
+            print("Se encuentra en 'Invierno'")
+    elif (dia>=21 and mes=="marzo")or mes=="abril" or mes=="mayo" or ("junio"==mes and dia<=20):
+            print("Se encuentra en 'Primavera'")
+    elif (dia>=21 and mes=="junio")or mes=="julio" or mes=="agosto" or ("septiembre"==mes and dia<=20):
+            print("Se encuentra en 'Verano'")
+    elif(dia>=21 and mes=="septiembre")or mes=="octubre" or mes=="noviembre" or ("diciembre"==mes and dia<=20):
+            print("Se encuentra en 'Otoño'")
+elif hemisferio=="s":    
+    if (dia>=21 and mes=="diciembre")or mes=="enero" or mes=="febrero" or ("marzo"==mes and dia<=20):
+            print("Se encuentra en 'verano'")
+    elif (dia>=21 and mes=="marzo")or mes=="abril" or mes=="mayo" or ("junio"==mes and dia<=20):
+            print("Se encuentra en 'Otoño'")
+    elif (dia>=21 and mes=="junio")or mes=="julio" or mes=="agosto" or ("septiembre"==mes and dia<=20):
+            print("Se encuentra en 'Invierno'")
+    elif (dia>=21 and mes=="septiembre")or mes=="octubre" or mes=="noviembre" or ("diciembre"==mes and dia<=20):
+            print("Se encuentra en 'Primavera'")

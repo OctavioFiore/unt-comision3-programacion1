@@ -166,3 +166,4 @@ del año es y qué día es. El programa deberá utilizar esa información para i
 si el usuario se encuentra en otoño, invierno, primavera o verano."""
 
 hemisferio=input("Ingrese en cual hemisferio se encuentra (N/S)")
+
