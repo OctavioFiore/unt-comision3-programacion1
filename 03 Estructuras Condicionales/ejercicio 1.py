@@ -1,17 +1,17 @@
 """1)Escribir un programa que solicite la edad del usuario. Si el usuario es mayor de 18 años,
 deberá mostrar un mensaje en pantalla que diga “Es mayor de edad”.
 """
-edad=int(input("Ingrese su edad: "))
-if edad>=18:
+edad = int(input("Ingrese su edad: "))
+if edad >= 18:
     print("Es mayor de edad")
 
 """2) Escribir un programa que solicite su nota al usuario. Si la nota es mayor o igual a 6, deberá
 mostrar por pantalla un mensaje que diga “Aprobado”; en caso contrario deberá mostrar el
 mensaje “Desaprobado”."""
 
-nota=int(input("Ingrese su nota: "))
+nota = int(input("Ingrese su nota: "))
 
-if nota>=6:
+if nota >= 6:
     print("Aprobado")
 else:
     print("Desaprobado")
@@ -21,8 +21,8 @@ número par, imprimir por en pantalla el mensaje "C"; en caso
 contrario, imprimir por pantalla "Por favor, ingrese un número par". Nota: investigar el uso del
 operador de módulo (%) en Python para evaluar si un número es par o impar.
 """
-numero=int(input("Ingrese un numero: "))
-if numero%2==0:
+numero = int(input("Ingrese un numero: "))
+if numero % 2 == 0:
     print("C")
 else:
     print("Por favor, ingrese un número par")
@@ -34,12 +34,12 @@ siguientes categorías pertenece:
 ● Adulto/a joven: mayor o igual que 18 años y menor que 30 años.
 ● Adulto/a: mayor o igual que 30 años.
 """
-edad=int(input("Ingrese su edad: "))
-if edad<12:
+edad = int(input("Ingrese su edad: "))
+if edad < 12 :
     print("● Niño/a")
-elif edad>=12 and edad<18:
+elif edad >= 12 and edad < 18:
     print("● Adolescente")
-elif edad>=18 and edad<30:
+elif edad >= 18 and edad < 30:
     print("● Adulto/a joven")
 else:
     print("● Adulto/a")
@@ -55,7 +55,7 @@ contrasena=input("Ingresa una contraseña: ")
 
 cantidad_caracteres=len(contrasena)
 
-if cantidad_caracteres>=8 and cantidad_caracteres<=14:
+if cantidad_caracteres >= 8 and cantidad_caracteres <= 14:
     print("Ha ingresado una contraseña correcta")
 else:
     print("Por favor, ingrese una contraseña de entre 8 y 14 caracteres")
@@ -73,15 +73,15 @@ la mediana es menor que la moda.
 import random
 from statistics import mean, median, mode
 numeros_aleatorios = [random.randint(1, 100) for i in range(50)]
-media=mean(numeros_aleatorios)
-mediana=median(numeros_aleatorios)
-moda=mode(numeros_aleatorios)
+media = mean(numeros_aleatorios)
+mediana = median(numeros_aleatorios)
+moda = mode(numeros_aleatorios)
 
-if media>mediana and mediana>moda:
+if media > mediana and mediana > moda :
     print("hay sesgo positivo")
-elif media<mediana and mediana<moda:
+elif media < mediana and mediana < moda :
     print("hay sesgo negativo")
-elif media==mediana==moda:
+elif media == mediana == moda :
     print("No hay sesgo")
 else:
     print("No se cumple ningun caso")
@@ -90,21 +90,21 @@ else:
 termina con vocal, añadir un signo de exclamación al final e imprimir el string resultante por
 pantalla; en caso contrario, dejar el string tal cual lo ingresó el usuario e imprimirlo por
 pantalla."""
-palabra=input("Ingrese una frase o palabra")
+palabra = input("Ingrese una frase o palabra: ")
 ultima_letra=palabra[-1].lower()
 
 
-if ultima_letra =='a':
+if ultima_letra == 'a':
     print(f'{palabra}!')
 
-elif ultima_letra=='e':
+elif ultima_letra == 'e' :
     print(f'{palabra}!')
 
-elif ultima_letra=='i':
+elif ultima_letra == 'i' :
     print(f'{palabra}!')
-elif ultima_letra=='o':
+elif ultima_letra == 'o' :
     print(f'{palabra}!')
-elif ultima_letra=='u':
+elif ultima_letra == 'u' :
     print(f'{palabra}!')
 else:
     print(palabra)
@@ -125,11 +125,11 @@ lower() y title() de Python para convertir entre mayúsculas y minúsculas.
 nombre=input("Ingrese su nombre: ")
 opcion=input("Elije la opcion que desee:\n1. Si quiere su nombre en mayúsculas.\n2. Si quiere su nombre en minúsculas.\n3. Si quiere su nombre con la primera letra mayúscula\nOpción: ")
 
-if opcion=="1":
+if opcion == "1":
     print(nombre.upper())
-elif opcion=="2":
+elif opcion == "2":
     print(nombre.lower())
-elif opcion=="3":
+elif opcion == "3" :
     print(nombre.title())
 else:
     print("Ingreso un numero incorrecto(Vuelva intentarlo con 1,2,3)")
@@ -146,17 +146,17 @@ débiles).
 ● Mayor o igual que 6 y menor que 7: "Muy Fuerte" (puede causar daños significativos).
 ● Mayor o igual que 7: "Extremo" (puede causar graves daños a gran escala).
 """
-magnitud_terremoto=float(input("Ingrese la magnitud del terremoto"))
+magnitud_terremoto=float(input("Ingrese la magnitud del terremoto: "))
 
-if magnitud_terremoto<3:
+if magnitud_terremoto < 3:
     print("Muy leve (imperceptible)")
-elif magnitud_terremoto>=3 and magnitud_terremoto<4:
+elif magnitud_terremoto >= 3 and magnitud_terremoto < 4:
     print("Leve (ligeramente perceptible).")
-elif magnitud_terremoto>=4 and magnitud_terremoto<5:
+elif magnitud_terremoto >=4 and magnitud_terremoto < 5:
     print("Moderado (sentido por personas, pero generalmente no causa daños)")
-elif magnitud_terremoto>=5 and magnitud_terremoto<6:
+elif magnitud_terremoto >= 5 and magnitud_terremoto < 6:
     print("Fuerte (puede causar daños en estructuras débiles)")
-elif magnitud_terremoto>=6 and magnitud_terremoto<7:
+elif magnitud_terremoto >= 6 and magnitud_terremoto < 7:
     print("Muy Fuerte (puede causar daños significativos)")
 else:
     print("Extremo (puede causar graves daños a gran escala)")
@@ -165,5 +165,27 @@ else:
 del año es y qué día es. El programa deberá utilizar esa información para imprimir por pantalla
 si el usuario se encuentra en otoño, invierno, primavera o verano."""
 
-hemisferio=input("Ingrese en cual hemisferio se encuentra (N/S)")
+hemisferio =input("Ingrese en cual hemisferio se encuentra (N/S): ").lower()
+
+mes = input("Ingrese que mes del año es: (ej: 'marzo'): ").lower()
+dia = int(input("Ingrese que dia del año es: (ej: '15'): "))
+
+if hemisferio == "n":
+    if (dia >= 21 and mes == "diciembre") or mes == "enero" or mes == "febrero" or ("marzo"== mes and dia <= 20):
+        print("Se encuentra en 'Invierno'")
+    elif (dia >= 21 and mes == "marzo") or mes == "abril" or mes == "mayo" or ("junio" == mes and dia <= 20):
+        print("Se encuentra en 'Primavera'")
+    elif (dia >= 21 and mes == "junio") or mes == "julio" or mes == "agosto" or ("septiembre" == mes and dia <=20):
+        print("Se encuentra en 'Verano'")
+    elif(dia >= 21 and mes == "septiembre") or mes == "octubre" or mes == "noviembre" or ("diciembre" == mes and dia <= 20):
+        print("Se encuentra en 'Otoño'")
+elif hemisferio=="s":    
+    if (dia >= 21 and mes == "diciembre") or mes == "enero" or mes == "febrero" or ("marzo" == mes and dia <= 20):
+        print("Se encuentra en 'verano'")
+    elif (dia >= 21 and mes == "marzo") or mes == "abril" or mes == "mayo" or ("junio" == mes and dia <= 20):
+        print("Se encuentra en 'Otoño'")
+    elif (dia >= 21 and mes == "junio") or mes =="julio" or mes=="agosto" or ("septiembre" == mes and dia <= 20):
+        print("Se encuentra en 'Invierno'")
+    elif (dia >= 21 and mes == "septiembre") or mes == "octubre" or mes=="noviembre" or ("diciembre" == mes and dia <= 20):
+        print("Se encuentra en 'Primavera'")
 
