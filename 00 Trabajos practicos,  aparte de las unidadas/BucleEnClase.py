@@ -19,36 +19,27 @@ permite volver a comenzar por el principio una vez que se llegó a la “z”: (
 la letra a correr+corrimiento)%27 Sólo se encriptarán las letras de los mensajes, 
 dejando al resto de caracteres sin modificación."""
 
-"""""
-ALFABETO_MINUSCULA = "abcdefghijklmnñopqrstuvwxyz"
+
+
+alfabeto = "abcdefghijklmnñopqrstuvwxyz"
+
+corrimiento = int(input("Ingrese el corrimiento: "))
+
 for i in range(5):
-        # El mensaje se pide DENTRO del bucle para que sea un mensaje nuevo cada vez
-        mensaje_original = input(f"Ingrese el mensaje {i+1}: ").lower()
-        
-        # Inicializamos la variable que guardará el mensaje encriptado
-        mensaje_cifrado = ""
-        
-        # Bucle interno: recorre CADA caracter del mensaje
-        for letra in mensaje_original:
-            # Comprobamos si el caracter es una letra del alfabeto
-            if letra in alfabeto:
-                nueva_pos = (alfabeto.index(letra) + corrimiento) % 27
-                # AGREGAMOS la nueva letra encriptada al mensaje final
-                mensaje_cifrado += alfabeto[nueva_pos]
-            else:
-                # Si NO es una letra (espacio, número, etc.), la agregamos sin encriptar
-                mensaje_cifrado += letra
-        
-        # Imprimimos el resultado de la encriptación
-        print(f"Mensaje encriptado: {mensaje_cifrado}\n")
+    
+    mensaje_original = input(f"Ingrese el mensaje {i+1}: ").lower()
 
+    mensaje_cifrado = ""
 
-"""""
+    for letra in mensaje_original:
+        if letra in alfabeto:
+            nueva_pos = (alfabeto.index(letra) + corrimiento) % 27
+            mensaje_cifrado += alfabeto[nueva_pos]
+        else:
+            
+            mensaje_cifrado += letra
 
-
-
-
-
+    print(f"Mensaje encriptado: {mensaje_cifrado}\n")
 
 
 
@@ -98,8 +89,8 @@ while opcion != 0 :
         if mano_jugador == "tijera":
             jugador_puntos+=1
         else:
-            npc_puntos=+1
-    elif (mano_jugador == "piedra"and npc=="tijera")or(mano_jugador == "tijera"and npc == "piedra"):
+            npc_puntos+=1
+    elif (mano_jugador == "piedra"and npc == "tijera")or(mano_jugador == "tijera"and npc == "piedra"):
         if mano_jugador == "tijera":
             jugador_puntos+=1
         else:
@@ -126,12 +117,3 @@ else:
 
 
 
-"""
-for letra in mensaje.lower():
-        if letra in alfabeto:
-            nueva_pos = (alfabeto.index(letra) + corrimiento) % 27
-            resultado += alfabeto[nueva_pos]
-        else:
-            resultado += letra
-    return resultado
-    """
