@@ -4,10 +4,10 @@
 #programa principal.
 def imprimir_hola():
     
-    return "Hola mundo!"
+    print("Hola mundo!")
 
 
-print(imprimir_hola())
+imprimir_hola()
 
 """Crear una función llamada saludar_usuario(nombre) que reciba
 como parámetro un nombre y devuelva un saludo personalizado.
@@ -18,20 +18,35 @@ principal solicitando el nombre al usuario."""
 
 def saludar_usuario(nombre):
     
-    return print(f"Hola {nombre}!")
+    return f"Hola {nombre}!"
 
 nombre_usuario = input("Ingrese su nombre: ").capitalize().strip()
-saludar_usuario(nombre_usuario)
+saludar = saludar_usuario(nombre_usuario)
+print(saludar)
 
 """3. Crear una función llamada informacion_personal(nombre, apellido,
 edad, residencia) que reciba cuatro parámetros e imprima: “Soy
 [nombre] [apellido], tengo [edad] años y vivo en [residencia]”. Pedir los datos al usuario y llamar a esta función con los valores ingresados.
+
 """
+def pedir_entero(mensaje):
+
+        while True:
+
+                n = input(mensaje)
+
+                if n.isdigit():
+
+                        return int(n)
+                else:
+                        print("Error:ingrese un número entero")
+
+
 
 def informacion_personal(nombre,apellido,edad,residencia):
 
     
-    return print(f"Soy {nombre} {apellido}, tengo {edad} años y vivo en {residencia}")
+    return f"Soy {nombre} {apellido}, tengo {edad} años y vivo en {residencia}"
 
 
 
@@ -39,11 +54,12 @@ nombre = input("Ingrese su nombre: ").capitalize().strip()
 
 apellido = input("Ingrese su apellido: ").capitalize().strip()
 
-edad = int(input("Ingrese su edad: "))
+edad = pedir_entero("Ingrese su edad: ")
 
 residencia = input("Ingrese su residencia: ").capitalize().strip()
 
-informacion_personal(nombre,apellido,edad,residencia)
+informacion_per = informacion_personal(nombre,apellido,edad,residencia)
+print(informacion_per)
 
 
 """
@@ -51,40 +67,30 @@ informacion_personal(nombre,apellido,edad,residencia)
 calcular_perimetro_circulo(radio) que reciba el radio como parámetro y devuelva el perímetro del círculo. 
 Solicitar el radio al usuario y llamar ambas funciones para mostrar los resultados
 """
-def pedir_entero():
+import math
 
+def pedir_float(mensaje):
     while True:
-
-        n = input("Ingrese el radio: ")
-
-        if n.isdigit():
-
-            return int(n)
-        else:
-            print("Error:ingrese un número entero")
-            
-
+        n = input(mensaje)
+        try:
+            return float(n)
+        except ValueError:
+            print("Error: ingrese un número válido")
 
 def calcular_area_circulo(radio):
-    import math
-    pi = math.pi
-
-    area = pi *(radio**2)
-    return  area
-
+    return math.pi * (radio ** 2)
 
 def calcular_perimetro_circulo(radio):
-    import math
-    pi = math.pi
-    pi = pi * 2
-    perimetro = pi * radio
+    return 2 * math.pi * radio
 
-    return perimetro
-
-radio = pedir_entero()
-
-print(f"El area de {radio} es: {calcular_area_circulo(radio)}")
-print(f"El area de {radio} es: {calcular_perimetro_circulo(radio)}")
+radio = pedir_float("Ingrese el radio: ")
+if radio <= 0:
+    print("Error: el radio debe ser mayor que 0.")
+else:
+    area = calcular_area_circulo(radio)
+    perimetro = calcular_perimetro_circulo(radio)
+    print(f"El área del círculo es: {area:.2f}")
+    print(f"El perímetro del círculo es: {perimetro:.2f}")
 
 """5. Crear una función llamada segundos_a_horas(segundos) que reciba
 una cantidad de segundos como parámetro y devuelva la cantidad
@@ -96,11 +102,11 @@ def segundos_a_horas(segundos):
 
         return segundos
 
-def pedir_entero():
+def pedir_entero(mensaje):
 
         while True:
 
-                n = input("Ingrese segundos: ")
+                n = input(mensaje)
 
                 if n.isdigit():
 
@@ -110,7 +116,7 @@ def pedir_entero():
 
 
 
-segundo = pedir_entero()
+segundo = pedir_entero("Ingrese segundos: ")
 
 print(f"De segundos a hora es: {segundos_a_horas(segundo)}")
 
@@ -127,11 +133,11 @@ def tabla_multiplicar(numero):
         
         print(f"{numero} X {i} = {resultado}")
         
-def pedir_entero():
+def pedir_entero(mensaje):
 
     while True:
 
-        n = input("Ingrese un número : ")
+        n = input(mensaje)
 
         if n.isdigit():
 
@@ -139,8 +145,8 @@ def pedir_entero():
         else:
             print("Error:ingrese un número entero")
 
-n = pedir_entero()
-tabla_multiplicar(n)
+n = pedir_entero("Ingrese un número: ")
+print(tabla_multiplicar(n))
 
 """
 7.Crear una función llamada operaciones_basicas(a, b) que reciba
@@ -162,11 +168,11 @@ def operaciones_basicas(a,b):
 
 
 
-def pedir_entero():
+def pedir_entero(mensaje):
 
     while True:
 
-        n = input("Ingrese un número entero: ")
+        n = input(mensaje)
 
         if n.isdigit():
 
@@ -177,11 +183,12 @@ def pedir_entero():
 
     
 
-numero = pedir_entero()
+numero = pedir_entero("Ingrese el primer número: ")
 
-numero2 = pedir_entero()
+numero2 = pedir_entero("Ingrese el segundo número: ")
 
-print(operaciones_basicas(numero,numero2))
+tupla = (operaciones_basicas(numero,numero2))
+print(tupla)
 
 
 """
@@ -207,10 +214,10 @@ def pedir_float(mensaje):
             return float(n)
 
         except ValueError:
-            print("Error:Ingrese numero valido")
+            print("Error:Ingrese número valido")
 
-peso = pedir_float("Ingrese el peso corporal: ")
-altura = pedir_float("Ingrese la altura: ")
+peso = pedir_float("Ingrese el peso kilogramos: ")
+altura = pedir_float("Ingrese la altura en metros: ")
 imc = calcular_impc(peso,altura)
 
 print(f"El imc es: {imc:.2f}")
@@ -236,7 +243,7 @@ def pedir_float(mensaje):
             return float(n)
 
         except ValueError:
-            print("Error:Ingrese numero valido")
+            print("Error:Ingrese número valido")
 
 celcius = pedir_float("Ingrese la temperatura en celsius: ")
 
@@ -263,10 +270,10 @@ def pedir_float(mensaje):
             return float(n)
 
         except ValueError:
-            print("Error:Ingrese numero valido")
+            print("Error:Ingrese número valido")
 
-num = pedir_float("Ingrese un numero: ")
-num2 = pedir_float("Ingrese el segundo numero: ")
+num = pedir_float("Ingrese un número: ")
+num2 = pedir_float("Ingrese el segundo número: ")
 num3 = pedir_float("Ingrese el tercer número: ")
 
 
