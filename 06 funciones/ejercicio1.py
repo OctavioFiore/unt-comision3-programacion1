@@ -204,14 +204,14 @@ def calcular_impc(peso, altura):
 
 
 
-def pedir_float(mensaje):
+def pedir_entero(mensaje):
 
     while True:
 
         n = input(mensaje)
 
         try:
-            return float(n)
+            return int(n)
 
         except ValueError:
             print("Error:Ingrese número valido")
@@ -243,7 +243,7 @@ def pedir_float(mensaje):
             return float(n)
 
         except ValueError:
-            print("Error:Ingrese número valido")
+            print("Error:Ingrese número válido")
 
 celcius = pedir_float("Ingrese la temperatura en celsius: ")
 
