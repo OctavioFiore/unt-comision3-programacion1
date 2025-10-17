@@ -12,7 +12,7 @@ def pedir_entero(mensaje):
         try:
             num = int(input(mensaje))
             return num
-        except:
+        except ValueError:
             print("⚠ Error:Ingrese un valor entero")
         
 
