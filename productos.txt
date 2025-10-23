@@ -1,1 +1,3 @@
-octavio,20023.0,2
+& c:/users/roco/appdata/local/programs/python/python312/python.exe "c:/users/roco/desktop/programacion/utn/08 manejo de archivos/ejercicio1.py",2.0,2
+3,2.0,3
+23,2.0,3
